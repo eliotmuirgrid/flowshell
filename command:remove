@@ -1,0 +1,11 @@
+command:remove() {
+    local arg1="$1"
+
+    if [[ -z "$arg1" ]] ; then
+        echo "Usage: command:remove <arg1> "
+        return 1
+    fi
+
+    rm ~/command/$arg1
+    command:reload
+}

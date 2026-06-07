@@ -1,0 +1,10 @@
+command:edit() {
+    local arg1="$1"
+
+    if [[ -z "$arg1" ]]; then
+        echo "Usage: command:edit <arg1>"
+        return 1
+    fi
+    vi ~/command/$arg1
+    command:reload
+}
