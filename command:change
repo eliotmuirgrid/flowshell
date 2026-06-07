@@ -2,9 +2,11 @@ command:change() {
     local comment="$*"
 
     if [[ -z "$comment" ]]; then
-        echo "Usage: change:change <comment>"
+        echo "Usage: command:change <comment>"
         return 1
     fi
+
+    cd "$HOME/command" || return 1
 
     git add -A || return 1
     git commit -m "$comment" >/dev/null || return 1
