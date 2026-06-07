@@ -29,5 +29,5 @@ EOF
 
     vi "$file"
     command:reload
-
+    command:change "Added $name" 
 }
