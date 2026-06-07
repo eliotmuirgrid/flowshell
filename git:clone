@@ -7,5 +7,5 @@ git:clone() {
         return 1
     fi
 
-    git clone -b main "git@localhost:/home/git/repos/${repo}.git" "$dest"
+    git clone "git@localhost:/home/git/repos/${repo}.git" "$dest"
 }
