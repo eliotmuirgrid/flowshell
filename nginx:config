@@ -1,0 +1,3 @@
+nginx:config() {
+   sudo vi /etc/nginx/sites-available/default
+}
