@@ -1,7 +1,9 @@
 # Super important to know where you are in the file system
 PROMPT='%n@%m:%~ %# '
+CMD_DIR=$HOME/command/commands
+
 # Load custom shell commands
-for f in ../*; do
-  echo "Install $f"
+for f in $HOME/command/commands/*; do
+  #echo "Install $f"
   source "$f"
 done

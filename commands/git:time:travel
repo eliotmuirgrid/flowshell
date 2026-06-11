@@ -1,18 +1,18 @@
 git:time:travel() {
-    local date="$1"
+   local date="$1"
 
-    [[ -z "$date" ]] && {
-        echo "Usage: git:time:travel YYYY-MM-DD"
-        return 1
-    }
+   [[ -z "$date" ]] && {
+      echo "Usage: git:time:travel YYYY-MM-DD"
+      return 1
+   }
 
-    local commit
-    commit=$(git rev-list -1 --before="${date} 23:59:59" HEAD)
+   local commit
+   commit=$(git rev-list -1 --before="${date} 23:59:59" HEAD)
 
-    [[ -z "$commit" ]] && {
-        echo "No commit found before $date"
-        return 1
-    }
+   [[ -z "$commit" ]] && {
+       echo "No commit found before $date"
+       return 1
+   }
 
-    git checkout -b "tt-${date}" "$commit"
+   git checkout -b "tt-${date}" "$commit"
 }

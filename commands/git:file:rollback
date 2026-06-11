@@ -1,15 +1,15 @@
 git:file:rollback() {
-    local file="$1"
-    local n="${2:-0}"
+   local file="$1"
+   local n="${2:-0}"
 
-    if [ -z "$file" ]; then
-        echo "usage: git:file:rollback FILE [N]"
-        return 1
-    fi
+   if [ -z "$file" ]; then
+      echo "usage: git:file:rollback FILE [N]"
+      return 1
+   fi
 
-    if [ "$n" -eq 0 ]; then
-        git restore -- "$file"
-    else
-        git restore --source="HEAD~${n}" -- "$file"
-    fi
+   if [ "$n" -eq 0 ]; then
+      git restore -- "$file"
+   else
+      git restore --source="HEAD~${n}" -- "$file"
+   fi
 }

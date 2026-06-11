@@ -6,7 +6,7 @@ command:add() {
         return 1
     fi
 
-    local file="$HOME/command/$name"
+    local file="$CMD_DIR/$name"
 
     if [[ ! -e "$file" ]]; then
         cat > "$file" <<EOF
@@ -28,6 +28,5 @@ EOF
     fi
 
     vi "$file"
-    command:reload
     command:change "Added $name" 
 }
