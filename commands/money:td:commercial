@@ -1,4 +1,4 @@
-money:td:commericial() {
+money:td:commercial() {
    open "https://businessbanking.tdcommercialbanking.com/WBB/Login"
 }
 

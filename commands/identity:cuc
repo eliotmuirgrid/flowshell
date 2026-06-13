@@ -1,0 +1,3 @@
+identity:cuc() {
+   open "https://billpay.cuc-cayman.com/login/"
+}
