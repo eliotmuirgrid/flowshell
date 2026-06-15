@@ -1,0 +1,31 @@
+email () {
+    local base="$1"
+
+    [[ -f "${base}.md" ]] || {
+        echo "File not found: ${base}.md"
+        return 1
+    }
+
+    local pdf
+    pdf=$(mktemp /tmp/${base}.letter.pdf)
+
+    pandoc "${base}.md" \
+        --resource-path=".:$HOME/windup/letterhead" \
+        --pdf-engine=xelatex \
+        -o "$pdf" || return 1
+
+    osascript <<EOF
+tell application "Mail"
+    activate
+
+    set newMessage to make new outgoing message with properties {visible:true}
+
+    tell newMessage
+        make new attachment with properties {file name:POSIX file "$pdf"} at after the last paragraph
+    end tell
+end tell
+EOF
+
+    # Give Mail time to copy the attachment
+    ( sleep 30; rm -f "$pdf" ) &
+}
