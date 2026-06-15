@@ -1,5 +1,19 @@
 music:play() {
     local query="$*"
 
-    open "https://open.spotify.com/search/${query// /%20}"
+    osascript <<EOF
+tell application "Music"
+    activate
+    set results to search library playlist 1 for "$query"
+
+    if (count of results) is greater than 0 then
+        play item 1 of results
+    else
+        display notification "No Apple Music result found for: $query" with title "music:play"
+    end if
+end tell
+EOF
 }
+    #local query="$*"
+    #open "https://open.spotify.com/search/${query// /%20}"
+
