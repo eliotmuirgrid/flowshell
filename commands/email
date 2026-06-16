@@ -1,15 +1,9 @@
 email () {
-    local base="$1"
+   local file=$(filter:extension:remove "${1:-i}")
+   local pdf
+   pdf=$(mktemp /tmp/${file}.letter.pdf)
 
-    [[ -f "${base}.md" ]] || {
-        echo "File not found: ${base}.md"
-        return 1
-    }
-
-    local pdf
-    pdf=$(mktemp /tmp/${base}.letter.pdf)
-
-    pandoc "${base}.md" \
+   pandoc "${file}.md" \
         --resource-path=".:$HOME/windup/letterhead" \
         --pdf-engine=xelatex \
         -o "$pdf" || return 1
