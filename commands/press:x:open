@@ -1,0 +1,3 @@
+press:x:open() {
+   open 'https://x.com/home'
+}
