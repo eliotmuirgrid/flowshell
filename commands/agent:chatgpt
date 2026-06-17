@@ -11,7 +11,7 @@ agent:chatgpt() {
         -H "Content-Type: application/json" \
         -d "{\"model\":\"gpt-4.1\",\"input\":\"$*\"}")
 
-    echo "DEBUG: raw response:" >&2
+    #echo "DEBUG: raw response:" >&2
 
     response= filter:trim:begin "text\"" "$response";
 
