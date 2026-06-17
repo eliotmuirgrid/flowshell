@@ -13,7 +13,8 @@ agent:chatgpt() {
 
     #echo "DEBUG: raw response:" >&2
 
-    response= filter:trim:begin "text\"" "$response";
-
+    response=$(filter:trim:begin "$response" 'text"')
+    response=$(filter:trim:begin "$response" ': "')
+    response=$(filter:trim:end "$response" '"')
     echo "DEBUG: $response"
 }
