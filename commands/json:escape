@@ -9,5 +9,5 @@ json:escape() {
   s=${s//$'\r'/\\r}
   s=${s//$'\t'/\\t}
 
-  print -r -- "\"$s\""
+  print -r -- "$s"
 }
