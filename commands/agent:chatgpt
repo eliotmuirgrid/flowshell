@@ -1,8 +1,8 @@
 agent:chatgpt() {
     local key=$(key:get chatgpt)
 
-    echo "DEBUG: key length = ${#key}" >&2
-    echo "DEBUG: prompt = $*" >&2
+    #echo "DEBUG: key length = ${#key}" >&2
+    #echo "DEBUG: prompt = $*" >&2
 
     local response
 
@@ -12,7 +12,8 @@ agent:chatgpt() {
         -d "{\"model\":\"gpt-4.1\",\"input\":\"$*\"}")
 
     echo "DEBUG: raw response:" >&2
-    echo "$response" >&2
 
-    echo "$response" | jq -r '.output_text'
+    response= filter:trim:begin "\"text\": \";
+
+    echo "DEBUG: $response"
 }
