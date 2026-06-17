@@ -1,11 +1,12 @@
 git:publish() {
    local msg="${*:-Update}"
+   local root = "${pwd:top}"
+   echo "$root" 
+   #git add . || return
+   #git commit -m "$msg" || return
 
-   git add . || return
-   git commit -m "$msg" || return
+   #local branch
+   #branch=$(git branch --show-current)
 
-   local branch
-   branch=$(git branch --show-current)
-
-   git push -u origin "$branch"
+   #git push -u origin "$branch"
 }
