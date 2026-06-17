@@ -1,4 +1,4 @@
-pwd:top() {
-   local p="${PWD#/}"
-   print -r -- "/${p%%/*}"
+pwd:home:root() {
+    local p="${PWD#$HOME/}"
+    print -r -- "${p%%/*}"
 }
