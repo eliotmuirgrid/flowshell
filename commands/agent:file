@@ -14,7 +14,7 @@ agent:file() {
    cprompt="$(json:escape $prompt:$(file:read $file))"
 
    echo $cprompt
-    echo "$(agent:$agent '$cprompt')"   
+    echo "$(agent:$agent \'$cprompt\')"   
  #   echo "$(agent:$agent 'Describe balloons')"   
 #   {
 #      [[ -n "$prompt" ]] && echo "$prompt"
