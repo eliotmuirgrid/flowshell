@@ -18,5 +18,5 @@ food:log() {
 EOF
     fi
 
-    echo "$(date '%H:%M')|$name|$quantity|" >> "$file"
+    echo "$(date '%H:%M')|$name|$quantity|" >> $file
 }
