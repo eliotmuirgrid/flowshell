@@ -1,0 +1,7 @@
+move() {
+    if [[ -z "$1" ]] || [[ -z "$2" ]]; then
+        echo "Usage: move <arg1> <arg2>"
+        return 1
+    fi
+    mv $1 $2
+}
