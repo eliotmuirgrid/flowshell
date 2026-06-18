@@ -18,8 +18,5 @@ food:log() {
 EOF
     fi
 
-    printf '| %s | %s | %s |\n' \
-        "$(date '%H:%M')" \
-        "$name" \
-        "$quantity" >> "$file"
+    echo "$(date '%H:%M')|$name|$quantity|" >> "$file"
 }
