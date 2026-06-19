@@ -1,4 +1,4 @@
-function Hello()
+local Hello = function()
    print "Hello"
 end
 

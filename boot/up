@@ -1,5 +1,5 @@
 # Super important to know where you are in the file system
-PROMPT='%n@%m:%~ %# '
+PROMPT='%m:%~ %# '
 CMD_DIR=$HOME/command/commands
 
 # Load custom shell commands
