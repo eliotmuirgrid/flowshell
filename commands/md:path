@@ -1,0 +1,9 @@
+md:path() {
+    local file="${1:-i}"
+
+    [[ "$file" != *.* ]] && file="${file}.md"
+
+    local path="${PWD#$HOME}"
+
+    echo "${path}/${file}"
+}
