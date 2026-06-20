@@ -1,0 +1,9 @@
+lua:write() {
+    if [[ -z "$1" ]] || [[ -z "$2" ]]; then
+        echo "Usage: lua:write <arg1> <arg2>"
+        return 1
+    fi
+
+    echo "arg1: $1"
+    echo "arg2: $2"
+}
