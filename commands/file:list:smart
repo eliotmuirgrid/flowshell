@@ -1,0 +1,13 @@
+file:list:smart() {
+   local file
+
+   for file; do
+      if   [[ -e "$file"      ]]; then echo "$file"
+      elif [[ -e "$file.lua"  ]]; then echo "$file.lua"
+      elif [[ -e "$file.md"   ]]; then echo "$file.md"
+      elif [[ -e "$file.sh"   ]]; then echo "$file.sh"
+      elif [[ -e "$file.c"    ]]; then echo "$file.c"
+      else                             echo "$file.md"
+      fi
+   done
+}
