@@ -5,7 +5,7 @@ command:edit() {
         echo "Usage: command:edit <arg1>"
         return 1
     fi
-    vi $CMD_DIR/$arg1
+    edit $CMD_DIR/$arg1
     source $CMD_DIR/$arg1 
     command:change "Edited $arg1"
 }
