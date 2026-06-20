@@ -3,8 +3,8 @@ git:publish() {
    local root="$HOME/$(pwd:top)"
    echo "$root" 
 
-   #git add . || return
-   #git commit -m "$msg" || return
+   git -C $root add . || return
+   git -C $root commit -m "$msg" || return
 
-   #git:push:all
+   git:push:all
 }
