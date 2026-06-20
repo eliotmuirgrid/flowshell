@@ -3,6 +3,5 @@ lua:write() {
         echo "Usage: lua:write <instructions>"
         return 1
     fi
-
-    echo "arg1: $1"
+    agent:file chatgpt $HOME/command/lua/commandments.md $1 | glow
 }
