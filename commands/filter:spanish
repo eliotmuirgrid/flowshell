@@ -5,9 +5,8 @@ filter:spanish() {
       echo "Usage: filter:spanish <file>" >&2
       return 1
    }
-
-
    file="$(file:list:smart "$1")"
-
-   echo $file; 
+   echo $file;
+   # TODO - multiple files
+   agent:file chatgpt $file "Translate to Spanish"
 }
