@@ -1,9 +1,11 @@
 agent:translate() {
-    if [[ -z "$1" ]] || [[ -z "$2" ]]; then
-        echo "Usage: agent:translate <arg1> <arg2>"
-        return 1
-    fi
+   if [[ -z "$1" ]] || [[ -z "$2" ]]; then
+      echo "Usage: agent:translate <file> <language>"
+      return 1
+   fi
 
-    echo "arg1: $1"
-    echo "arg2: $2"
+   local file="$(file:list:smart "$1")"
+   local language = $2;
+   # TODO - multiple files
+   agent:file chatgpt $file "Translate to $language - just the translation - no commentary"
 }
