@@ -8,10 +8,10 @@ For instance I love listening to music when I work so [music:play](commands/musi
 
 And I love to communicate so [md:speak:apple](commands/md:speak:apple) makes it simple for me to quickly listen to what I want to.
 
-And I love to communicate people who speak Spanish [agent](commands/filter:spanish) makes it simple for me to translate what I write to Spanish speakers.
+And I love to communicate people who speak Spanish [filter:spanish](commands/filter:spanish) makes it simple for me to translate what I write to Spanish speakers.
 
-I also have a great sense of humour and I live in the Cayman Islands which has a fine history of Piracy in it's early history and so just for 
-
+I also have a great sense of humour and I live in the Cayman Islands which has a fine history of Piracy in it's early history and so just for
+fun I wrote [filter:pirate](commands/filter:pirate). 
 
 ## Installation
 
