@@ -1,0 +1,11 @@
+speak:piper() {
+   local wav=$(mktemp /tmp/piper.XXXXXX.wav)
+
+   echo "$*" | \
+     python -m piper \
+     --model ~/piper-voices/en_US-lessac-medium.onnx \
+     --output_file "$wav" >/dev/null
+
+   afplay "$wav"
+   rm -f "$wav"
+}

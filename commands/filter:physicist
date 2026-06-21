@@ -1,0 +1,11 @@
+filter:physicist() {
+   local file
+
+   [[ -z "$1" ]] && {
+      echo "Usage: filter:spanish <file>" >&2
+      return 1
+   }
+   file="$(file:list:smart "$1")"
+   # TODO - multiple files
+   agent:file chatgpt $file "Translate into examples a Physicist would like - just the translation - no commentary"
+}

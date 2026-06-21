@@ -1,0 +1,7 @@
+speak:apple() {
+   if [[ -z "$1" ]]; then
+      echo "Usage: speak:apple <text>"
+      return 1
+   fi
+   say "$1"
+}
