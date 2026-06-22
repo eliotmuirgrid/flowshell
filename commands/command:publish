@@ -1,0 +1,7 @@
+command:publish() {
+   if [[ -z "$1" ]]; then
+      echo "Usage: command:publish <comment>"
+      return 1
+   fi
+    
+}

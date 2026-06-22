@@ -3,5 +3,9 @@ image:convert() {
        echo "Usage: image:convert file format"
        return 1
    fi
- 
+   local format=$2;
+   local out=$(filter:extension:remove $1)
+   out="$out.$format"
+   sips -s format "$format" $1 --out $out
+   echo "Converted $1 to $out"
 }
