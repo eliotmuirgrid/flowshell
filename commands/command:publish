@@ -3,5 +3,5 @@ command:publish() {
       echo "Usage: command:publish <comment>"
       return 1
    fi
-    
+   dir:change:temp ~/command git:publish 
 }
