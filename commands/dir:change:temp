@@ -1,0 +1,9 @@
+dir:change:temp() {
+   local dir="$1"
+   shift
+
+   (
+      cd "$dir" || exit 1
+      "$@"
+   )
+}
