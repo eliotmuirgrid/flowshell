@@ -17,8 +17,6 @@ They use z-shell which is one of the nicest shells available.
 It's the default shell on Mac OS X these days and you can I believe it can even run on Windows.  I haven't done it yet but I think on a Mac or Linux machine it won't be that hard.  Nothing is
 that complicated.
 
-To understand the potential for these tools can be used please see the press release about [Burp Suite](https://github.com/eliotmuirgrid/press/blob/main/safety/escrow/burp.md).
-
 ## FlowShell is also Fun for Ordinary Folks
 
 But FlowShell isn't just for security conscious administrators.  It's also for ordinary folks that just want to save time automating all those annoying tasks.
