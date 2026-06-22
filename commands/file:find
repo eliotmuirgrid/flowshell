@@ -1,0 +1,10 @@
+file:find() {
+    local phrase="$*"
+
+    if [[ -z "$phrase" ]]; then
+        echo "usage: file:find <phrase>" >&2
+        return 1
+    fi
+
+    grep -Ril --exclude-dir=.git -- "$phrase" .
+}

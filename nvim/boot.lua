@@ -84,6 +84,7 @@ end
 
 function JsonUnescape(s)
    s=s:gsub('\\n', '\n');
+   s=s:gsub('\\u2013', '–');
    s=s:gsub('\\u2014', '—');
    s=s:gsub('\\u201c', '“');
    s=s:gsub('\\u201d', '”');
