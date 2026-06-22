@@ -38,6 +38,12 @@ At least for now while the tools are in beta.  Fork them if you want to guarante
 amazed at what you can do once you embrace hacking open source tools and realize that when we just make the effort as hackers to communicate a little more
 clearly everyone benefits. Burp suite is all about making open source computing and fun anyone who is curious and willing to experiment and learn.
 
+## Burp Suite is Actually Part of the More Serious Purpose 
+
+This is the tooling framework I am using the build the next version of Iguana and a lot more.
+
+Read more about [the purpose of Burp Suite](https://github.com/eliotmuirgrid/press/blob/master/iguana/burp/i.md).
+
 ## License Terms
 
 Before using or incorporating someone else’s intellectual property, it is prudent to understand the applicable licensing terms.
