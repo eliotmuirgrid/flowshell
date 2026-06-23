@@ -1,9 +1,5 @@
 command:add2() {
-    if [[ -z "$1" ]] || [[ -z "$2" ]]; then
-        echo "Usage: command:add2 <arg1> <arg2>"
-        return 1
-    fi
-
-    echo "arg1: $1"
-    echo "arg2: $2"
+   if file:exists $1 then
+      echo "FSDFS"
+   fi
 }
