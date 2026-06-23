@@ -34,7 +34,7 @@ fun I wrote [filter:pirate](commands/filter:pirate).
 
 At least for now while the tools are in beta.  Fork them if you want to guarantee your access to this useful toolset.  Once you get the hang of it you'll be
 amazed at what you can do once you embrace hacking open source tools and realize that when we just make the effort as hackers to communicate a little more
-clearly everyone benefits. Burp suite is all about making open source computing and fun anyone who is curious and willing to experiment and learn.
+clearly everyone benefits. FlowShell is all about making open source computing and fun anyone who is curious and willing to experiment and learn.
 
 ## FlowShell is Actually Part of the More Serious Purpose 
 
