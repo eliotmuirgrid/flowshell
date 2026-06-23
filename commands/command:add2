@@ -1,6 +1,6 @@
 command:add2() {
    echo $(file:exist command:add2);
-   if file:exist \"command:add2\"; then
+   if file:exist "command:add2"; then
       echo "FSDFS"
    fi
 }
