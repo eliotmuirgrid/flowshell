@@ -4,6 +4,7 @@ command:remove() {
       echo "Usage: command:remove <name> "
       return 1
    fi
-   git rm ~/command/$name
+   git rm $CMD_DIR/$name
    command:publish "Removed command $name"
 }
+
