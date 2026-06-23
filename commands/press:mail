@@ -1,0 +1,6 @@
+press:mail() {
+   if [[ -z "$1" ]] || [[ -z "$2" ]]; then
+      echo "Usage: press:mail file email"
+      return 1
+   fi
+}
