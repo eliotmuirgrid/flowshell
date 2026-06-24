@@ -2,7 +2,7 @@ chrome:tab:focus() {
    arg:check 1 "$@" || return;
    local needle="$1"
    echo "Looking for $needle"
-   osascript "$needle" <<'APPLESCRIPT'
+   osascript - "$needle" <<'APPLESCRIPT'
 on run argv
    set needle to item 1 of argv
 
