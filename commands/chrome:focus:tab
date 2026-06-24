@@ -9,6 +9,7 @@ on run argv
       repeat with w in windows
          set i to 1
          repeat with t in tabs of w
+	    log "Tab: " & tabTitle
             if (title of t as string) contains needle then
                set active tab index of w to i
                set index of w to 1
