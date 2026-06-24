@@ -1,0 +1,18 @@
+hubspot:publish() {
+   arg:check 1 "$@" || return;
+
+   cat<<EOF
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Home (index.html)
+  screenshotPath: ../images/template-previews/home.png
+-->
+<!--{% set template_css = "../../styles/pages/HMP-homepage.css" %}
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+<div style="padding: 1em 1em 1em 3em; max-width: 50em;">
+   EOF
+
+}
