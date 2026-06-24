@@ -1,4 +1,4 @@
-tabs:list() {
+chrome:tab:list() {
    osascript <<'APPLESCRIPT'
 tell application "Google Chrome"
    set output to ""

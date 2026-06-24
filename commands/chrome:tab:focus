@@ -1,28 +1,31 @@
-chrome:focus:tab() {
+chrome:tab:focus() {
    arg:check 1 "$@" || return;
-
-   osascript "$1" <<'APPLESCRIPT'
+   local needle="$1"
+   echo "Looking for $needle"
+   osascript "$needle" <<'APPLESCRIPT'
 on run argv
-   log "Telling Chrome"
    set needle to item 1 of argv
+
    tell application "Google Chrome"
-      log "Start"
       repeat with w in windows
          set i to 1
+
          repeat with t in tabs of w
-	    log "Tab: " & tabTitle
-            if (title of t as string) contains needle then
+            set tabTitle to title of t as string
+
+            if tabTitle contains needle then
                set active tab index of w to i
                set index of w to 1
                activate
-               return
+               return "Focused: " & tabTitle
             end if
+
             set i to i + 1
          end repeat
       end repeat
    end tell
 
-   error "No Chrome tab found with title containing: " & needle
+   return "No tab found containing: " & needle
 end run
 APPLESCRIPT
 }
