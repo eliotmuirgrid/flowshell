@@ -1,0 +1,6 @@
+command:show() {
+   arg:check 1 "$@" || return;
+   local name="$1"
+   local file="$FLOW_COMMANDS/$name"
+   cat $file
+}
