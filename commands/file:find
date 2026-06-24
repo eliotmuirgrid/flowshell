@@ -6,6 +6,6 @@ file:find() {
         return 1
     fi
 
-    grep -Ril --exclude-dir=.git -- "$phrase" . | paste -sd' '
+    grep -Ril --exclude-dir=.git -- "$phrase" . | paste -s -d' '
 }
 :
