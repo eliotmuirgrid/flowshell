@@ -1,0 +1,15 @@
+key:replace() {
+   arg:check 1 "$@" || return;
+   osascript <<'APPLESCRIPT'
+tell application "System Events"
+   keystroke "a" using command down
+   delay 0.1
+
+   key code 51
+   delay 0.1
+
+   keystroke "v" using command down
+end tell
+APPLESCRIPT
+
+}
