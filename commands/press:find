@@ -5,7 +5,8 @@ press:find() {
    echo $result 
    typeset -a list
    set -A list -- $result
-   for item in "${list[@]}"; do
+   for item in "${list[*]}"; do
+      echo $item
       press:open $item 
    done
 }
