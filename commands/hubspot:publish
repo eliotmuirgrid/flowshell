@@ -1,7 +1,7 @@
 hubspot:publish() {
    arg:check 1 "$@" || return;
    local file="${1%.md}"
-   cat<<EOF
+   local header=$(cat<<EOF
 <!--
   templateType: page
   isAvailableForNewContent: true
@@ -14,8 +14,9 @@ hubspot:publish() {
 {% block body %}
 <div style="padding: 1em 1em 1em 3em; max-width: 50em;">
 EOF
-   pandoc "${file}.md" --lua-filter=$HOME/flowshell/lua/rebase.lua 
-   cat<<FEB
+)
+   local middle=$(pandoc "${file}.md" --lua-filter=$HOME/flowshell/lua/rebase.lua) 
+   local footer=$(cat<<FEB
 </div>
 
 {% endblock body %}
@@ -26,4 +27,6 @@ EOF
 	{% module "faq-homepage" path='/iguanax-website-theme/modules/faq', label="On-Page Footer FAQ" %}
 {% endblock faq %}
 FEB
+)
+    echo "$header $middle $footer"
 }
