@@ -1,14 +1,17 @@
 key:replace() {
    osascript <<'APPLESCRIPT'
+tell application "Google Chrome" to activate
+delay 0.5
+
 tell application "System Events"
+   tell process "Google Chrome"
+      set frontmost to true
+   end tell
+
+   delay 0.2
    keystroke "a" using command down
    delay 0.1
-
-   key code 51
-   delay 0.1
-
    keystroke "v" using command down
 end tell
 APPLESCRIPT
-
 }
