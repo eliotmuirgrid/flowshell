@@ -3,4 +3,5 @@ hubspot:update() {
    hubspot:publish $1
    open "https://app.hubspot.com/design-manager/4076588/code/175863326889?tfid=175862060042"
    chrome:tab:focus "Design Manager"
+   key:replace
 }
