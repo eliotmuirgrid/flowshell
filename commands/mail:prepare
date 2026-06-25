@@ -1,5 +1,5 @@
 mail:prepare() {
-   local dir=dir:current
+   local dir=$(dir:current)
    local file="$dir/$4"
    echo "Sending email to $1 Subject: $2 \n$3\nattachment:$file" 
 
