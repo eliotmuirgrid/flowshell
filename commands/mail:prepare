@@ -13,7 +13,4 @@ tell application "Mail"
     end tell
 end tell
 EOF
-#    }
-#        make new to recipient at end of to recipients with properties {address:"$1"}
-#        make new attachment with properties {file name:POSIX file "$4"} at after the last paragraph
 }
