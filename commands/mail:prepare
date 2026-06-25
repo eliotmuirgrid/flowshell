@@ -6,7 +6,7 @@ mail:prepare() {
 tell application "Mail"
     activate
 
-    set newMessage to make new outgoing message with properties {visible:true, subject: "$2", content: "$3" } 
+    set newMessage to make new outgoing message with properties {visible:true,subject:"$2",content:"$3"} 
 end tell
 EOF
 #    }
