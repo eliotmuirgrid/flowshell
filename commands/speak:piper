@@ -6,7 +6,7 @@ speak:piper(){
    echo $file
 
    echo "$1" |  /Users/eliotmuir/piper-test/venv/bin/piper \
-     --model $file \
+     --model "$file" \
      --length_scale $scale \
      --output_file "$2" >/dev/null
 
