@@ -1,11 +1,11 @@
 voice:download() {
    arg:check 2 "$@" || return
 
-   local path="$1"
+   local dir="$1"
    local file="$2"
 
    echo "Downloading $file..."
 
-   curl -L -f -O "$BASE/$path/$file.onnx"
-   curl -L -f -O "$BASE/$path/$file.onnx.json"
+   curl -L -f -O "$BASE/$dir/$file.onnx"
+   curl -L -f -O "$BASE/$dir/$file.onnx.json"
 }
