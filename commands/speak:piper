@@ -1,13 +1,13 @@
 speak:piper(){
    local voice="${2:-libritts-high}"
    local scale="${3:-1.5}"
+   local output="${4:-output"
 
    local file="$HOME/piper-voices/en_US-$voice.onnx"
-   echo $file
 
    echo "$1" |  /Users/eliotmuir/piper-test/venv/bin/piper \
      --model "$file" \
      --length_scale $scale \
-     --output_file "$2" >/dev/null
-
+     --output_file "$output.wav" >/dev/null
+   echo "Generated $output.wav"
 }
