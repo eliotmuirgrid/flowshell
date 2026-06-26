@@ -1,0 +1,10 @@
+args:parse() {
+    local -n out=$1
+    shift
+
+    local arg
+    for arg; do
+        [[ $arg == *=* ]] || continue
+        out[${arg%%=*}]=${arg#*=}
+    done
+}

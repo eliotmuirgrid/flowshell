@@ -1,0 +1,18 @@
+arg:parse() {
+   # Separate the user inputs ($@) from our schema definition
+    local -a user_args=( "${(@)argv[1,(I)*=*]}" )
+    local -a schema=( "${(@)argv[#user_args+1,-1]}" )
+
+    # Process each expected key in the schema
+    for item in $schema; do
+        local key="${item%%=*}"
+        local default="${item#*=}"
+        
+        # Find if the user passed this key
+        local match="${user_args[(M)]${key}=*}"
+        local val="${match#*=:-$default}"
+        
+        # Output a raw 'local' definition string safely quoted
+        echo "local $key='${val//\'/\'\\\'\'}';"
+    done
+}

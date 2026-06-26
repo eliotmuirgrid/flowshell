@@ -1,0 +1,9 @@
+# Delete me
+args:parser() {
+    typeset -A args
+
+    args:parse args "$@"
+
+    echo "voice=${args[voice]:-fred}"
+    echo "speed=${args[speed]:-1}"
+}
