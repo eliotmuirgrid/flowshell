@@ -1,0 +1,9 @@
+voice:rename() {
+   arg:check 2 "$@" || return;
+
+   local from="$HOME/piper-voices/$1.onnx"
+   local to="$HOME/piper-voices/$2.onnx"
+
+   move "$from" "$to"
+   move "$from.json" "$to.json"
+}
