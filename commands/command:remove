@@ -2,6 +2,7 @@ command:remove() {
    local name="$1"
    arg:check 1 "@" || return 1
    git rm $FLOW_COMMANDS/$name
+   rm $FLOW_COMMANDS/$name
    command:publish "Removed command $name"
 }
 

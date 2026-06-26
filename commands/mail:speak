@@ -1,3 +1,0 @@
-mail:speak() {
-   arg:check 1 "$@" || return;
-}

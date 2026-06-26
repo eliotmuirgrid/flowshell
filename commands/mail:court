@@ -1,8 +1,12 @@
 mail:court() {
-   arg:check 1 "$@" || return;
+   local text=$(arg:get text Hello "$@")
+   local voice=$(arg:get voice amy "$@")
+   local speed=$(arg:get speed 1 "$@")
 
-   speak:piper $1 joe 2 voice
-   mail:prepare FamilyTrialOffice-SCJ-Toronto@ontario.ca "RE: Muir v Muir; Court File No. FS-25-00049704-0000" $1 voice.wav
-   afplay voice.wav
-   rm voice.wav
+   echo "Using $voice (speed=$speed) saying $text";
+
+   speak:piper text="$text" voice=$voice speed=$speed play=false 
+   mail:prepare to=FamilyTrialOffice-SCJ-Toronto@ontario.ca cc=Toronto.SCJ.Familyintake@ontario.ca subject="RE: Muir v Muir; Court File No. FS-25-00049704-0000" body=$text attachment=output.wav
+   afplay output.wav
+   rm output.wav
 } 

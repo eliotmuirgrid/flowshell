@@ -1,0 +1,27 @@
+mail:document() {
+   local file=$(arg:get file i.md "$@")
+   local voice=$(arg:get voice amy "$@")
+   local speed=$(arg:get speed 1 "$@")
+   local to=$(arg:get to nobody "$@")
+   local cc=$(arg:get cc none "$@")
+
+   local header=$(arg:get header Read "$@")
+
+   local text="$(md:strip $file)"
+
+   local body="$header\n\n$text"
+
+   local subject="Re: $(md:path $file)"
+
+   local plain_body="There is a second version of this email with sound,
+please indicate if it went through.  Many firewalls
+will stop perfectly reasonable files from getting
+through which makes communication harder."
+
+   plain_body="$plain_body\n\n$body";
+   speak:piper text="$body" voice=$voice speed=$speed play=false 
+   mail:prepare to=$to cc=$cc body=$plain_body subject="$subject (no sound)" 
+   mail:prepare to=$to cc=$cc body=$body subject="$subject (sound)" attachment=output.wav
+   afplay output.wav
+   rm output.wav
+} 

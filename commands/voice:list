@@ -1,0 +1,3 @@
+voice:list() {
+   list ~/piper-voices/*.json
+}

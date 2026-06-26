@@ -1,16 +1,30 @@
 mail:prepare() {
+   local to=$(arg:get to toperson "$@")
+   local cc=$(arg:get cc none "$@")
+   local file=$(arg:get attachment none "$@")
+   local subject=$(arg:get subject communication "$@")
+   local body=$(arg:get body Body "$@")
+
    local dir=$(dir:current)
-   local file="$dir/$4"
-   echo "Sending email to $1 Subject: $2 \n$3\nattachment:$file" 
+   local attachment="$dir/$file"
+
+   local cc_script=""
+   if [[ "$cc" != "none" ]]; then
+      cc_script="make new cc recipient at end of cc recipients with properties {address:\"$cc\"}"
+   fi
+
+   echo "Sending email to $to (cc=$cc) Subject: $subject \n$body\nattachment:$attachment" 
 
    osascript <<EOF
 tell application "Mail"
     activate
-    set newMessage to make new outgoing message with properties {visible:true,subject:"$2",content:"$3"} 
+    set newMessage to make new outgoing message with properties {visible:true,subject:"$subject",content:"$body"} 
     tell newMessage
-        make new to recipient at end of to recipients with properties {address:"$1"}
-        make new attachment with properties {file name:POSIX file "$file"} at after the last paragraph
+        make new to recipient at end of to recipients with properties {address:"$to"}
+	$cc_script
+        make new attachment with properties {file name:POSIX file "$attachment"} at before the first paragraph
     end tell
 end tell
 EOF
+
 }
