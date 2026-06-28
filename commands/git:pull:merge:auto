@@ -1,0 +1,3 @@
+git:pull:merge:auto() {
+   git pull --no-edit
+}

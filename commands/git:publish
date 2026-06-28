@@ -1,15 +1,16 @@
 git:publish() {
-   local msg="${arg:default $1 Update}"
+   local msg="$(arg:default $1 Update)"
+   local root=$2;
    local default_root="$HOME/$(pwd:top)"
-   local root="${arg:default $2 $default_root}"
+   root="$(arg:default $root $default_root)"
    
    echo "git:publish in $root with message $msg"
-   dir:push "$root"
+   dir:push "$root"  || return
 
    git:add:all       || return
    git:commit "$msg" || return
 
-   git pull --no-edit
+   git pull --no-edit || return
    git:push:all
    dir:pop
 }
