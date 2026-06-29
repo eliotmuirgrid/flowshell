@@ -1,0 +1,5 @@
+license:generate() {
+   arg:check 1 "$@" || return;
+
+   url:open "http://interfaceware.co/license?id=$1"
+}

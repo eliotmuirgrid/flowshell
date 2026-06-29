@@ -1,0 +1,12 @@
+loop:run() {
+   if [ "$#" -lt 2 ]; then
+      echo "Usage: pause:loop:run <pause_in_seconds> <command> [args...]"
+      return 1
+   fi
+   local pause="$1"
+   shift
+   while true; do
+      "$@"
+      sleep "$pause"
+   done
+}

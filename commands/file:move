@@ -1,0 +1,4 @@
+file:move() {
+   arg:check 2 "$@" || return;
+   mv -vn -- $1 $2
+}

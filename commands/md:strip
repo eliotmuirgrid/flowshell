@@ -4,7 +4,7 @@ md:strip() {
 
    [[ "$file" != *.md ]] && file="${file}.md"
 
-   echo "Stripping $file"
+   #echo "Stripping $file"
 
    pandoc "$file" -t plain 
 }

@@ -1,0 +1,6 @@
+git:branch:init() {
+   # master is just fine. keeps it standard and master records were
+   # never a problem.  Call me what ever.  My partner is black
+   # History and people are complicated.
+   git branch -M master
+}

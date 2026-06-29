@@ -4,5 +4,7 @@ git:clone:github() {
    local repo="$1"
    local dest="$2"
 
-   git clone "git@github.com:eliotmuirgrid/${repo}.git" "$dest"
+   git:clone "$(git:url:github:eliotmuirgrid $repo)" "$dest"
+   cd $dest
+   git submodule update --init --recursive
 }

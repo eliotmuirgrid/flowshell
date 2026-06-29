@@ -1,0 +1,21 @@
+git:ignore:create() {
+   cat > ".gitignore" <<EOF
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+*~
+*.swp
+
+*.o
+*.d
+*.out
+*.log
+*.com
+
+.* 
+!.gitignore
+!.gitmodules
+EOF
+}

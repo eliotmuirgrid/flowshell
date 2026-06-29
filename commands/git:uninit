@@ -1,0 +1,6 @@
+git:uninit() {
+   dir:remove .git            || return
+   file:remove .gitattributes || return
+   file:remove .gitignore     || return
+   file:remove .gitmodules    || return
+}

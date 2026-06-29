@@ -1,0 +1,11 @@
+git:repo:init() {
+   arg:check 1 "$@" || return;
+   local url=$1;
+   git init                   || return;
+   git:ignore:create          || return;
+   git:add:all                || return;
+   git:commit                 || return;
+   git:branch:init            || return;
+   git:remote:add origin $url || return;
+   git:push:all            
+}

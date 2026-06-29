@@ -1,0 +1,7 @@
+git:url() {
+   arg:check 3 "$@" || return;
+   local host=$1
+   local user=$2
+   local repo=$3
+   echo "git@$host:$user/$repo.git" 
+}

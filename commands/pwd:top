@@ -1,4 +1,4 @@
 pwd:top() {
-    local p="${PWD#$HOME/}"
-    print -r -- "${p%%/*}"
+   local p="${PWD#$HOME/}"
+   print -r -- "${p%%/*}"
 }

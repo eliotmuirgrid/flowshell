@@ -5,12 +5,12 @@ git:publish() {
    root="$(arg:default $root $default_root)"
    
    echo "git:publish in $root with message $msg"
-   dir:push "$root"  || return
+   dir:push "$root"    || return
 
-   git:add:all       || return
-   git:commit "$msg" || return
+   git:add:all         || return
+   git:commit "$msg"   || return
 
-   git pull --no-edit || return
+   git:pull:merge:auto || return
    git:push:all
    dir:pop
 }
