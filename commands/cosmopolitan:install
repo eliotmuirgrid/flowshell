@@ -1,10 +1,8 @@
-cosmo:install() {
-   local dir="$HOME/cosmo" 
+cosmopolitan:install() {
+   local dir="$FLOW_TOOL_COSMOPOLITAN" 
    dir:remove $dir
    dir:create $dir 
    dir:push   $dir
-
-   file:download cosmo.zip/pub/cosmocc/cosmocc.zip
 
    file:download   https://cosmo.zip/pub/cosmocc/cosmocc.zip
    file:uncompress cosmocc.zip 

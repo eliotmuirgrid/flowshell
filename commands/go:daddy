@@ -1,0 +1,3 @@
+go:daddy() {
+   url:open "https://dcc.godaddy.com/control/dnshosting"
+}

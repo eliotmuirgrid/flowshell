@@ -1,0 +1,35 @@
+lua:5.0.3:download() {
+   lua:5.0.3:clean
+   file:download https://www.lua.org/ftp/lua-5.0.3.tar.gz  
+   file:tar:uncompress lua-5.0.3.tar.gz 
+   file:move lua-5.0.3/src/lua  parser
+   file:move lua-5.0.3/src/luac compiler
+   file:move lua-5.0.3/src/lib/ LUA
+   mv        lua-5.0.3/src/*     LUA
+   file:move lua-5.0.3/include/lauxlib.h LUA
+   file:move lua-5.0.3/include/lua.h     LUA
+   file:move lua-5.0.3/include/lualib.h  LUA
+   dir:remove lua-5.0.3
+   dir:remove lua-5.0.3.tar.gz
+   file:remove parser/Makefile
+   file:remove compiler/Makefile
+
+   file:replace "compiler/luac.c" "de \"l" "de \"LUA/l"
+   
+   cat >> parser/makefile <<EOF
+TARGET=parser.com
+
+DIRS=\
+LUA\
+
+include ../make/makefile
+EOF
+   cat >> compiler/makefile <<EOM
+TARGET=compilerlua.com
+
+DIRS=\
+LUA\
+
+include ../make/makefile
+EOM
+}

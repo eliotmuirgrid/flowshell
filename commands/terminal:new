@@ -1,0 +1,8 @@
+terminal:new() {
+osascript <<EOF
+tell application "Terminal"
+    activate
+    do script ""
+end tell
+EOF
+}

@@ -1,0 +1,5 @@
+filter:md:title() {
+   arg:check 1 "$@" || return;
+   title=$(sed -n '/^# /{s/^# \\+\\(.*\\)/\\1/;p;q;}' "$1")
+   [ -z "$title" ] && echo "NO TITLE" || echo "$title"
+}

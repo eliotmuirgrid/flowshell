@@ -1,4 +1,4 @@
 build:clean() {
-   make clean
-   make
+   make clean 
+   make -j 64
 }

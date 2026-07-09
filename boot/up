@@ -1,7 +1,10 @@
 # Super important to know where you are in the file system
 PROMPT='%m:%~ %# '
-FLOW_SHELL=$HOME/flowshell
-FLOW_COMMANDS=$FLOW_SHELL/commands
+export FLOW_SHELL=$HOME/flowshell
+export FLOW_COMMANDS=$FLOW_SHELL/commands
+export FLOW_TOOL=$HOME/flowtools
+export FLOW_TOOL_COSMOPOLITAN=$FLOW_TOOL/cosmopolitan
+export FLOW_TOOL_EFFECTS=$FLOW_TOOL/effects
 export LUA_PATH="$FLOW_SHELL/nvim/?.lua"
 
 source "$FLOW_COMMANDS/command:install"

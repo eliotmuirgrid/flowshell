@@ -12,11 +12,17 @@ hubspot:publish() {
 {% extends "./layouts/base.html" %}
 
 {% block body %}
-<div style="padding: 1em 1em 1em 3em; max-width: 50em;">
+<div style="padding: 1em 3em; max-width: 50em; margin: 0 auto;">
 EOF
 )
    local middle=$(pandoc "${file}.md" --lua-filter=$HOME/flowshell/lua/rebase.lua) 
    local footer=$(cat<<FEB
+<p>
+   If you want to talk to talk then reach out via Whatsapp or iMessage on 1 345 325 1240 to reach Eliot for questions and discussion.  
+</p>
+<p>
+   For <a href="https://interfaceware.zoom.us/my/eliotmuir">ZOOM meetings with Eliot</a> please use that link.
+</p>
 </div>
 
 {% endblock body %}

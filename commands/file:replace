@@ -1,0 +1,15 @@
+file:replace() {
+   arg:check 3 "$@" || return;
+
+   local file="$1"
+   local search="$2"
+   local replace="$3"
+
+   # Check if file exists
+   if [ ! -f "$file" ]; then
+       echo "File '$file' not found."
+       return 1
+   fi
+
+   sed -i "s/${search}/${replace}/g" "$file"
+}

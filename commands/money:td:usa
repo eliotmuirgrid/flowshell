@@ -1,0 +1,4 @@
+money:td:usa() {
+   url:open 'https://etreasury.td.com'
+   cat "$HOME/.td:usa"
+}
