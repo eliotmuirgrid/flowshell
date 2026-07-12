@@ -1,0 +1,3 @@
+money:butterfield() {
+   url:open "https://www.butterfieldonline.com"
+}

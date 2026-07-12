@@ -1,4 +1,4 @@
 music:play(){    
    local query="$*"
-   open "https://open.spotify.com/search/${query// /%20}"
+   open "https://open.spotify.com/search/${query}"
 }

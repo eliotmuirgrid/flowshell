@@ -1,0 +1,15 @@
+email:invoice () {
+   local file=$(filter:extension:remove "${1:-i}")
+   local pdf
+   pdf="$HOME/Downloads/${file}-invoice.pdf"
+  
+   echo $pdf
+   # TODO dependencies to remove
+   pandoc "${file}.md" \
+        --resource-path=".:$HOME/letterhead" \
+        --pdf-engine=xelatex \
+        -o "$pdf" || return 1
+
+   mail:prepare attachment=$pdf
+}
+

@@ -5,7 +5,7 @@ email () {
 
    # TODO dependencies to remove
    pandoc "${file}.md" \
-        --resource-path=".:$HOME/windup/letterhead" \
+        --resource-path=".:$HOME/letterhead" \
         --pdf-engine=xelatex \
         -o "$pdf" || return 1
 

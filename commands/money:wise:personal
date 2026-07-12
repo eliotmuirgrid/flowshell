@@ -1,0 +1,3 @@
+money:wise:personal() {
+   url:open "https://wise.com/"
+}

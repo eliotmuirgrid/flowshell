@@ -1,0 +1,3 @@
+hubspot:open() {
+   url:open "https://app.hubspot.com/design-manager/4076588"
+}

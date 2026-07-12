@@ -1,0 +1,3 @@
+internet:starlink() {
+   url:open "https://www.starlink.com"
+}
