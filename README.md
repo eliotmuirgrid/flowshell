@@ -2,35 +2,32 @@
 
 ## Installation
 
-For me it comes down to two commands to install it.
+Flow Shell currently supports **macOS** and **Linux** using **zsh**.
 
+```sh
+git clone git@github.com:eliotmuirgrid/flowshell.git
+```
 
-git clone 
+Add this to your `~/.zshrc`:
 
+```sh
 source "$HOME/flowshell/boot/up"
+```
 
-## Why it matters
+Restart your shell or run:
 
-The command line has a terrible reputation, but I don't think that's because the command line itself is inherently bad.
+```sh
+source ~/.zshrc
+```
 
-The real problem is history.
+## Why Flow Shell?
 
-Most command-line environments evolved over decades. Thousands of independent tools were created by different people, each with their own conventions, assumptions and naming schemes. The result is a system that's incredibly powerful but often difficult to learn and even harder to remember.
+The command line isn't difficult because it's a bad idea—it's difficult because it evolved over decades with inconsistent commands and conventions.
 
-Engineers are forced to memorize countless commands, flags and obscure syntax instead of thinking about the problem they're actually trying to solve.
+Flow Shell is my attempt to simplify that experience.
 
-When I started rebuilding my business, I didn't have much choice. I went from an organization that had been supported by 27 people to one that is now largely run by a single person. That forces a very different style of engineering. Every repetitive task becomes an opportunity for automation, and every confusing command becomes technical debt.
+Whenever I found myself repeatedly looking up commands or writing the same scripts, I added a small abstraction. Over time those improvements became Flow Shell.
 
-I began with zsh simply because it was a good foundation. Then, whenever I found myself forgetting a command or repeatedly looking something up, I added a small abstraction. Over time those small improvements accumulated into what I now call **Flow Shell**.
+It doesn't replace Unix. It makes Unix easier to use.
 
-Flow Shell isn't about replacing Unix. It's about making Unix easier to use.
-
-Instead of expecting people to memorize decades of historical conventions, the shell should guide them toward accomplishing what they actually want to do. A command line should communicate clearly, not require archaeology.
-
-Like any long-lived project, Flow Shell has accumulated a few shortcuts and personal utilities that probably shouldn't become part of a public release. Before sharing it widely, I'll need to refactor those pieces into a cleaner architecture. That's a healthy process—it separates the reusable ideas from the personal workflow that produced them.
-
-My first goal is simply to make installation effortless. Once someone is using the same environment, we can have a much more productive conversation about improving their workflow, automating repetitive tasks and making their systems more secure.
-
-An easy-to-use command line has a compounding effect. It makes automation simpler. It makes documentation shorter. It makes training easier. It allows people to accomplish sophisticated tasks without first becoming experts in decades of command-line history.
-
-Ultimately, that's what Flow Shell is about: reducing cognitive load so people can spend their time solving real problems instead of remembering obscure commands.
+The result is a command line that's easier to remember, easier to automate, easier to document, and ultimately more productive.
