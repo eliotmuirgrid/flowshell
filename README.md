@@ -1,4 +1,15 @@
-## Why I'm Building Flow Shell
+# Flow Shell
+
+## Installation
+
+For me it comes down to two commands to install it.
+
+
+git clone 
+
+source "$HOME/flowshell/boot/up"
+
+## Why it matters
 
 The command line has a terrible reputation, but I don't think that's because the command line itself is inherently bad.
 
