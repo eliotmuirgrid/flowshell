@@ -12,7 +12,11 @@ hubspot:publish() {
 {% extends "./layouts/base.html" %}
 
 {% block body %}
+
 <div style="padding: 1em 3em; max-width: 50em; margin: 0 auto;">
+<p>
+<a href="https://github.com/eliotmuirgrid/press/blob/master/business.md">For license codes, support etc. just go here for now</a>  we'll get things more polished later.
+</p>
 EOF
 )
    local middle=$(pandoc "${file}.md" --lua-filter=$HOME/flowshell/lua/rebase.lua) 

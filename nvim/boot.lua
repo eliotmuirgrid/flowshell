@@ -90,6 +90,10 @@ function JsonUnescape(s)
    s=s:gsub('\\u201d', '”');
    s=s:gsub('\\u2026', '…');
    s=s:gsub('\\u2019', '’');
+   s=s:gsub('\\u00e9', 'é');
+   s=s:gsub('\\u00e0', 'è');
+   s=s:gsub('\\u00e8', 'è');
+   s=s:gsub(' \\ud83e\\udd8e ',' '); -- gets rid of those blasted creepy Iguanas 
    s=s:gsub('\\u00f6', 'o'); -- TODO 0  
    s=s:gsub('\\"', '"');
    s=s:gsub("\\'", "'");
@@ -110,9 +114,25 @@ AgentGpt = function(Prompt)
    local Response = HttpPost(P);
    Response = FilterTrimBegin(Response,'"text": \"');
    Response = FilterTrimEnd(Response,'"role": "assistant"')
-   --print(Response);
    Response = FilterTrimEnd(Response, '"');
+   Response = JsonUnescape(Response);
+   return Response;
+end
 
+AgentLama = function(Prompt)
+   local P = {}
+   P.url = 'http://localhost:11434/api/generate'
+   P.headers = {}
+   P.headers["Content-Type"] = 'application/json'
+   P.data = {
+      model  = "llama3.2",
+      prompt = Prompt,
+      stream = false
+   }
+   local Response = HttpPost(P)
+   Response = FilterTrimBegin(Response,'"response":\"');
+   Response = FilterTrimEnd(Response,'"done":true')
+   Response = FilterTrimEnd(Response, '"');
    Response = JsonUnescape(Response);
    return Response;
 end

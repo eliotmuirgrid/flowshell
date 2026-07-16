@@ -2,10 +2,15 @@ press:url() {
    arg:check 1 "$@" || return;
 
    local file="${1:-i}"
-   local md_path
+   local url
 
-   md_path="$(md:path "$file")"
-   md_path="$(filter:trim:begin "$md_path" "/press")"
-
-   echo "https://github.com/eliotmuirgrid/press/blob/master${md_path}"
+   url="$(md:path "$file")"
+   url="$(filter:trim:begin "$url" "/press")"
+   url="$(filter:trim:end "$url" ".md")"
+   case "$url" in
+    */i)
+        url="${url%i}"
+        ;;
+   esac
+   echo "https://interfaceware.com${url}"
 }

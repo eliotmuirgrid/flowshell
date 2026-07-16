@@ -1,0 +1,7 @@
+press:test() {
+   url:open "http://localhost:8080/"
+   export CONTENT_ROOT="$HOME/press"                         
+   export SITE_TITLE="iNTERFACEWARE"                                             
+   dir:push $HOME/press-publisher
+   php -S localhost:8080 -t public
+}

@@ -3,5 +3,5 @@ press:sync() {
       --exclude='.git/' \
       --exclude='.DS_Store' \
       ~/press/ \
-      eliot@caymanisland1:~/press/
+      eliot@caymanisland1:/var/www/press/
 }
