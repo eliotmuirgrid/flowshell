@@ -1,5 +1,5 @@
 comm:linkedin() {
-   open "https://www.linkedin.com/feed/"
+   url:open "https://www.linkedin.com/feed/"
 }
 
 

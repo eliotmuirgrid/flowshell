@@ -1,7 +1,5 @@
 command:publish() {
-   if [[ -z "$1" ]]; then
-      echo "Usage: command:publish <comment>"
-      return 1
-   fi
-#   dir:change:temp ~/flowshell git:publish 
+   dir:push "$HOME/flowshell"
+   git:publish 
+   dir:pop
 }
