@@ -1,5 +1,6 @@
 music:play(){    
    #local query="$*"
    #open "https://open.spotify.com/search/${query}"
+   echo ~/flowlua/flowlua/flowlua.com music:play "$*"
    ~/flowlua/flowlua/flowlua.com music:play "$*"
 }
