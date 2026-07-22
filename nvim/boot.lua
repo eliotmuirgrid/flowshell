@@ -83,24 +83,11 @@ function BeginInsert(text)
 end
 
 function JsonUnescape(s)
-   s=s:gsub('\\n', '\n');
-   s=s:gsub('\\u2013', '–');
-   s=s:gsub('\\u2014', '—');
-   s=s:gsub('\\u201c', '“');
-   s=s:gsub('\\u201d', '”');
-   s=s:gsub('\\u2026', '…');
-   s=s:gsub('\\u2019', '’');
-   s=s:gsub('\\u00e9', 'é');
-   s=s:gsub('\\u00e0', 'è');
-   s=s:gsub('\\u00e8', 'è');
    s=s:gsub(' \\ud83e\\udd8e ',' '); -- gets rid of those blasted creepy Iguanas 
-   s=s:gsub('\\u00f6', 'o'); -- TODO 0  
-   s=s:gsub('\\"', '"');
-   s=s:gsub("\\'", "'");
-   return s 
+   s=vim.json.decode('"'..s..'"');
+   s=s:sub(2, #s-1);
+   return s;
 end
-
---vim.json.decode(s);
 
 AgentGpt = function(Prompt)
    local Key = KeyGet('chatgpt');
