@@ -1,0 +1,3 @@
+shop:amazon() {
+   url:open "https://www.amazon.com/gp/css/order-history"
+}
