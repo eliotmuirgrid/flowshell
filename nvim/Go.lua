@@ -61,6 +61,14 @@ function VIMgoCpp()
    VIMeditFile(File);
 end	
 
+function VIMgoLua()
+   local Symbol            = VIMcurrentWord();
+   local Prefix, Remainder = VIMprefixRemainder(Symbol);
+   local File = "../"..Prefix.."/"..Prefix..Remainder..".lua"
+   trace(File);
+   VIMeditFile(File);
+end	
+
 function VIMgoMd()
    local line = vim.fn.getline(".")
    trace(line)
@@ -71,10 +79,22 @@ function VIMgoMd()
    end
 end
 
+function VIMext()
+   return vim.fn.expand("%:e");
+end	
+
+function VIMjumpFile(File)
+   print("Jump to "..File.."."..VIMext()); 
+end	
+
 local Go = function(Arg)
-   trace(Arg);
-   local Ext = vim.fn.expand("%:e");
+   print(Arg.args);
+   if (#Arg.args > 0) then
+      VIMjumpFile(Arg.args); 
+   end	
+   local Ext = VIMext();
    if (Ext == "cpp") then VIMgoCpp() end;
+   if (Ext == "lua") then VIMgoLua() end;
    if (Ext ==  "md") then VIMgoMd () end;
 end
 

@@ -1,6 +1,0 @@
-lua:5.0.3:clean() {
-   dir:remove compiler
-   dir:remove parser
-   dir:remove LUA
-}
-
