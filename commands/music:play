@@ -1,5 +1,5 @@
 music:play(){    
    #local query="$*"
    #open "https://open.spotify.com/search/${query}"
-   ~/flow/flow.com "$*" --trace "MUSIC* main URL*"
+   flow music:play "$*" 
 }

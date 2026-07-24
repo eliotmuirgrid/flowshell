@@ -1,5 +1,6 @@
 # Super important to know where you are in the file system
 PROMPT='%m:%~ %# '
+export PATH="$PATH:$HOME/flow"
 export FLOW_SHELL=$HOME/flowshell
 export FLOW_COMMANDS=$FLOW_SHELL/commands
 export FLOW_TOOL=$HOME/flowtools
