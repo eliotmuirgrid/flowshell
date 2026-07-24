@@ -1,5 +1,3 @@
 music:play(){    
-   #local query="$*"
-   #open "https://open.spotify.com/search/${query}"
-   flow music:play "$*" 
+   flow music:play $* 
 }
