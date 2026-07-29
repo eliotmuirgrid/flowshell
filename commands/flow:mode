@@ -1,7 +1,16 @@
 flow:mode() {
     print "Entered f-mode. Type 'exit' to quit."
-    while read -r "cmd?> f "; do
+    while true; do
+        print -n "flow > "
+        read -r cmd
+        
+        # 1. Skip completely if the user just hits Enter
+        [[ -z "$cmd" ]] && continue
+        
+        # 2. Exit the loop cleanly if requested
         [[ "$cmd" == "exit" ]] && break
+        
+        # 3. Safely pass arguments to the flow command
         flow $cmd
     done
 }
