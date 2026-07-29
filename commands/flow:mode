@@ -1,0 +1,7 @@
+flow:mode() {
+   print "Entered f-mode. Type 'exit' to quit."
+   while read -r cmd?"> f "; do
+      [[ "$cmd" == "exit" ]] && break
+      f $cmd
+   done
+}
