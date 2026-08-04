@@ -2,7 +2,7 @@ local F = function(opts)
    local Topic = opts.args;
    local Buffer = BufferCompleteGet();
 
-   local Definition = AgentGpt(Topic..":"..Buffer);
+   local Definition = Agent(Topic..":"..Buffer);
    BeginInsert(Definition);
 end
 

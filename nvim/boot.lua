@@ -83,13 +83,14 @@ function BeginInsert(text)
 end
 
 function JsonUnescape(s)
+   print(s)
    s=s:gsub(' \\ud83e\\udd8e ',' '); -- gets rid of those blasted creepy Iguanas 
    s=vim.json.decode('"'..s..'"');
    s=s:sub(2, #s-1);
    return s;
 end
 
-AgentGpt = function(Prompt)
+--[[AgentGpt = function(Prompt)
    local Key = KeyGet('chatgpt');
    local P = {}
    P.url = 'https://api.openai.com/v1/responses';
@@ -104,9 +105,9 @@ AgentGpt = function(Prompt)
    Response = FilterTrimEnd(Response, '"');
    Response = JsonUnescape(Response);
    return Response;
-end
+end]]
 
-AgentLama = function(Prompt)
+Agent = function(Prompt)
    local P = {}
    P.url = 'http://localhost:11434/api/generate'
    P.headers = {}
