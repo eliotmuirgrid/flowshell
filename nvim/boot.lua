@@ -90,7 +90,7 @@ function JsonUnescape(s)
    return s;
 end
 
---[[AgentGpt = function(Prompt)
+Agent = function(Prompt)
    local Key = KeyGet('chatgpt');
    local P = {}
    P.url = 'https://api.openai.com/v1/responses';
@@ -105,15 +105,15 @@ end
    Response = FilterTrimEnd(Response, '"');
    Response = JsonUnescape(Response);
    return Response;
-end]]
+end
 
-Agent = function(Prompt)
+AgentLocal = function(Prompt)
    local P = {}
    P.url = 'http://localhost:11434/api/generate'
    P.headers = {}
    P.headers["Content-Type"] = 'application/json'
    P.data = {
-      model  = "llama3.2",
+      model  = "llama3.2:latest",
       prompt = Prompt,
       stream = false
    }
