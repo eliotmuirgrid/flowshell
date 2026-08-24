@@ -1,0 +1,3 @@
+money:chase() {
+   url:open "https://secure.chase.com/web/auth/nav"
+}
