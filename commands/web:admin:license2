@@ -1,0 +1,3 @@
+web:admin:license2() {
+   ssh licensing@license2.interfaceware.com
+}
